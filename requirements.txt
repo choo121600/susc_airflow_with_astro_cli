@@ -4,3 +4,4 @@ pandas==2.2.3
 feedparser==6.0.11
 pendulum==3.0.0
 typing-extensions==4.12.2
+selenium

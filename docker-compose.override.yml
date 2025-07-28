@@ -1,0 +1,20 @@
+services:
+  selenium-demo:
+    image: selenium/standalone-chromium:latest
+    container_name: selenium-demo
+    ports:
+      - "4444:4444"
+    shm_size: 2g
+    restart: always
+    networks:
+      - selenium-network
+
+  scheduler:
+    depends_on:
+      - selenium-demo
+    networks:
+      - selenium-network
+
+networks:
+  selenium-network:
+    driver: bridge
